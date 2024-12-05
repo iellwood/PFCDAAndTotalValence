@@ -145,8 +145,6 @@ def analyze_dataset(
         pvalue = DataProcessingFunctions.display_n_sig_figs(pvalue, 2)
         plt.text(concentrations[0], text_y, 'n = ' + str(number_of_animals) + ', F = ' + str(Fvalue) + ', p = ' + str(pvalue))
 
-        # np.save('SummaryData/' + header + 'mean_F_across_averaging_window', mean_F_across_averaging_window)
-
         plt.savefig('FigurePdfs/MainFigures/' + header + 'F_vs_ConcentrationSummary.pdf', transparent=True)
         plt.show()
 
