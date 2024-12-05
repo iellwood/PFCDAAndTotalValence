@@ -1,8 +1,16 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# Produces the interaction times for a mouse entering a drawer, either after the stimulus has first been inserted or
+# removed. Note the use of Grubb's test to remove outliers, which is performed in the file InteractionTimesData.py
+
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import utils.prettyplot as prettyplot
 import utils.statsfunctions
-from OriginalData.DrawerExperimentsData.InteractionTimes import *
+from DrawerExperiments.InteractionTimesData import *
 
 
 

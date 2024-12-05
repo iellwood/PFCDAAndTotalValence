@@ -1,3 +1,10 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# Produces the non-heatmap plots of from the isosbestic fluorescence and tracking data of mice exploring the EPM
+
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt

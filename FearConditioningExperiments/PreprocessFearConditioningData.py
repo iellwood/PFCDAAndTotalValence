@@ -1,3 +1,11 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# **WARNING**: This script requires the original, unprocessed data files, which must be in the folder OriginalData
+# These files are not included in the GitHub repository due to their size, but can be made available upon request.
+
 # This file preprocesses the signals recorded during the fear conditioning experiment.
 #
 # Notes:

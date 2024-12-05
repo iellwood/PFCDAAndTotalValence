@@ -1,15 +1,19 @@
-import pickle
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# This file contains functions for gathering windows of data, plotting and handles some of the statistics.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import utils.prettyplot as prettyplot
-import os
 import scipy.signal as signal
 import scipy.stats as stats
 from statsmodels.stats.multitest import multipletests as mult_test
 
 # Global constants
 carousel_turning_time = 0.8                             # seconds to turn the carousel into position
-quinine_concentrations = [0.0, 0.8, 1.6, 3.2, 4.8]
 
 # These indices are used in the metadata associated with the peri-event windows
 ANIMAL_NUMBER = 0
@@ -20,6 +24,13 @@ TOTAL_LICK_NUMBER_OF_LICKS = 4
 EVENT_TIME = 5
 
 def baseline_signal(ts, data, window):
+    """
+    Mean subtract a signal over the specified window
+    :param ts: array of times for each point in data
+    :param data: the data to be baselined
+    :param window: the window [t_start, t_end]
+    :return: baselined signal
+    """
     return data - np.mean(data[np.logical_and(ts >= window[0], ts <= window[1])])
 
 

@@ -1,3 +1,8 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
 # This script plots the coordinates for the implant locations using Paxinos and Franklin's 2001 atlas.
 #
 # Paxinos, George, and Keith B.J. Franklin. The mouse brain in stereotaxic coordinates: hard cover edition. Access Online via Elsevier, 2001

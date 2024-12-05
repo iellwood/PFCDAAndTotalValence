@@ -1,3 +1,11 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# **WARNING**: This script requires the original, unprocessed data files, which must be in the folder OriginalData
+# These files are not included in the GitHub repository due to their size, but can be made available upon request.
+
 # This file preprocesses the signals recorded during the Drawer Experiment.
 #
 # Notes:
@@ -5,7 +13,7 @@
 # 2) The data is low-passed filtered and decimated by a factor of 10 to save space and speed up the analysis. (This
 # makes the sampling frequency a bit above 100 Hz.)
 # 3) FearConditioningData from 0 to 1.5 seconds has been replaced by a linear interpolation to remove artifacts when the
-# photometry rig is first turned on.No Analysis should include the data before t = 1.5 seconds.
+# photometry rig is first turned on. No Analysis should include the data before t = 1.5 seconds.
 # 4) dF/F for both the excitation signal and isosbestic was computed by fitting a double exponential to the signal
 # and treating this as F_0.dF/F = (F - F_0) /F_0.
 # 5) The dF/F of the isosbestic was linearly fit to dF/F of the excitation using np.polyfit.The resulting fit

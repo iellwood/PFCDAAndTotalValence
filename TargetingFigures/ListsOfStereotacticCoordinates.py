@@ -1,3 +1,19 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# List of all targeting coordinates estimated by comparing fixed slices with Paxinos & Franklin 2001
+# Paxinos, George, and Keith B.J. Franklin. The mouse brain in stereotaxic coordinates: hard cover edition. Access Online via Elsevier, 2001
+#
+# The online tool by Matt Gaidica was used for comparing locations in histological slices with the atlas.
+#
+# Permission to use images from Paxinos & Franklin is given in the Preface to the atlas: "As authors, we give permission
+# for the reproduction of any figure from the atlas in other publications, provided that the atlas is cited."
+#
+# The figures from the atlas have been modified to remove the grid lines and other irrelevant aspects of the images.
+
+
 import numpy as np
 
 mPFC_coordinates = [

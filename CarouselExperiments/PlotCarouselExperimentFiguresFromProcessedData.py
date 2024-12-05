@@ -1,10 +1,14 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# Produces the figures for the sucrose, quinine, and quinine + sucrose experiments.
+
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import utils.prettyplot as prettyplot
-import os
-import scipy.signal as signal
-import scipy.stats as stats
 import DataProcessingFunctions
 import utils.statsfunctions as statsfunctions
 

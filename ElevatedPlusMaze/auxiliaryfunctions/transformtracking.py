@@ -1,3 +1,10 @@
+# Code from "Prefrontal Cortex Dopamine Responds to the Total Valence of Stimuli"
+# Authors: Y. Yang, W. Parent, H. Rice, R. Mark, M. Desimone, M. Rahman and I. T. Ellwood
+# First uploaded version 12/5/2024
+# Questions about the code should be directed to the corresponding author I.T. Ellwood
+
+# Transforms the tracking data from the EPM so that the maze fits within a region [-1, 1] for the x and y coordinates
+
 import numpy as np
 import auxiliaryfunctions.EPMGeometry as EPMGeometry
 import os
