@@ -47,6 +47,39 @@ def analyze_dataset(
         plt.savefig('FigurePdfs/MainFigures/' + header + 'ExampleDataset.pdf', transparent=True)
         plt.show()
 
+    # Collect the windows from all animals around the beam break crossing
+    # Note that the subtraction of 0.8 accounts for the turn time of the carousel
+    metadata, window_ts, windows = DataProcessingFunctions.get_all_perievent_window_data(experiment_dictionary['data'], [perievent_window[0] - 0.8, perievent_window[1] - 0.8], event_name='water_time', zscore=zscore_data)
+    window_ts += 0.8
+    # Average within animal
+    means = []
+    for i in range(number_of_animals):
+        m, s = DataProcessingFunctions.get_within_animal_average(i, metadata, windows)
+        means.append(m)
+    means = np.array(means)
+    means = means - np.mean(means[:, :, np.logical_and(window_ts >= baseline_window[0], window_ts <= baseline_window[1])])
+
+    I = np.logical_and(window_ts >= -5, window_ts < 5)
+    window_ts = window_ts[I]
+    means = means[:, :, I]
+
+    plt.figure(figsize=(2, 3))
+    plt.subplots_adjust(left=0.2, bottom=0.2)
+    mean_beam_break = np.mean(np.mean(means, 1), 0)
+    sem_beam_break = np.std(np.mean(means, 1), 0)/np.sqrt(means.shape[0])
+    plt.axvspan(0, 0.8, color=[0.8, 0.8, 1])
+    plt.fill_between(window_ts,  mean_beam_break - sem_beam_break, mean_beam_break + sem_beam_break, color=[0.8, 0.8, 0.8], clip_on=False)
+    plt.plot(window_ts, mean_beam_break, color='k')
+
+    prettyplot.no_box()
+    prettyplot.xlabel('time s')
+    prettyplot.ylabel('z-score')
+    prettyplot.title('B.B. Perievent')
+    plt.savefig('FigurePdfs/BeamBreakPerieventAverages/' + header + 'PerieventAverageAroundBeamBreak.pdf', transparent=True)
+    plt.show()
+
+
+
     # Collects all the windows from all the animals. The metadata tells the animal number and port for everyone window
     metadata, window_ts, windows = DataProcessingFunctions.get_all_perievent_window_data(experiment_dictionary['data'], perievent_window, zscore=zscore_data)
 
@@ -75,8 +108,6 @@ def analyze_dataset(
         sems.append(s)
     means = np.array(means)
     sems = np.array(sems)
-
-
 
 
     # Compute the mean fluorescence across the averaging window
